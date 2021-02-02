@@ -17,7 +17,8 @@ public class MyList<E> {
     }
 
     public Object get(int i) {
-
+        if (i > size || i < 0)
+            throw new IndexOutOfBoundsException("Index is: " + size + "and i is" + i);
         return els[i];
     }
 
