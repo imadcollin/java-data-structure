@@ -2,16 +2,12 @@ package arrays;
 
 public class SearchArray {
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 9, 12, 5, 6, 7 };
 
-        // Search for 5 index
-        int index = search(arr, 5);
-        // System.out.println(index);
+        int index = search(new int[] { 1, 2, 3, 4, 9, 12, 5, 6, 7 }, 7);
+        print(5, index);
 
-        int arr2[] = { 1, 2, 3, 4, 5, 6, 7, 12, 15, 22 };
-        index = binarySearch(arr2, 6);
-        System.out.println(index);
-
+        int index2 = binarySearch(new int[] { 1, 2, 3, 4, 5, 6, 7, 12, 15, 22 }, 6);
+        print(6, index2);
     }
 
     public static int binarySearch(int arr[], int num) {
@@ -45,5 +41,13 @@ public class SearchArray {
             index++;
         }
         return -1;
+    }
+
+    public static void print(int element, int index) {
+        if (index == -1) {
+            System.out.println("Element not found ...!");
+        } else
+            System.out.println(element + "  Index is:[" + index + "]");
+
     }
 }
