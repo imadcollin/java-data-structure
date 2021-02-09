@@ -1,4 +1,4 @@
-package arrays;
+package search;
 
 import java.util.Arrays;
 

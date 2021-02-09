@@ -1,4 +1,4 @@
-package arrays;
+package search;
 
 public class SearchArray {
     public static void main(String[] args) {
