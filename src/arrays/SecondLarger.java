@@ -7,15 +7,15 @@ public class SecondLarger {
     }
 
     private static int findSecondLarger(int[] arr) {
-        int lower = 0, higher = 0;
+        Integer high = Integer.MIN_VALUE, higher = Integer.MIN_VALUE;
         for (int i : arr) {
 
-            if (lower < i) {
-                lower = higher;
+            if (high < i) {
+                high = higher;
                 higher = i;
             }
 
         }
-        return lower;
+        return high;
     }
 }
