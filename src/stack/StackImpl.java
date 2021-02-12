@@ -28,12 +28,22 @@ public class StackImpl {
         return arr[top];
     }
 
+    public int pop() {
+        if (!isEmpty())
+            return arr[top--];
+        return 0;
+    }
+
     public int size() {
         return size;
     }
 
     public boolean hasSpace() {
         return top < size - 1;
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
     }
 
     public void increaseCapacity() {
