@@ -12,6 +12,10 @@ public class Main {
         System.out.println(stack.peek());
 
         System.out.println("-----------------");
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+
+        System.out.println("-----------------");
         stack.push(5);
         stack.push(4);
         stack.push(3);
@@ -20,5 +24,10 @@ public class Main {
 
         System.out.println(stack.size);
         System.out.println(stack.peek());
+
+        System.out.println("-----------------");
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.pop());
+
     }
 }
