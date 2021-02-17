@@ -46,8 +46,30 @@ public class QueueLinkedList {
         }
     }
 
-    public void removeNode(int data) {
+    public void removeFirstNode() {
+        if (front != null)
+            front = front.next;
+        else
+            System.out.println("Queue is Empty");
 
+    }
+
+    public void removeLastNode() {
+        if (rear == null)
+            System.out.println("Only Front found");
+        else if (front == null && rear == null)
+            System.out.println("Queue is empty ");
+
+        else {
+            Node currNode = front;
+            Node temp = front;
+            while (currNode.next != null) {
+                temp = currNode;
+                currNode = currNode.next;
+            }
+            currNode = temp;
+            currNode.next = null;
+        }
     }
 
     public void print() {
