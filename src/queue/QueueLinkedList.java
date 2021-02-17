@@ -46,6 +46,19 @@ public class QueueLinkedList {
         }
     }
 
+    public void addLast(int data) {
+        if (front == null)
+            front.data = data;
+        else {
+            Node current = front;
+            while (current.next != null) {
+                current = current.next;
+            }
+            Node newNode = new Node(data);
+            current.next = newNode;
+        }
+    }
+
     public void removeFirstNode() {
         if (front != null)
             front = front.next;
