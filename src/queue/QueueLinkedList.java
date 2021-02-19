@@ -1,23 +1,10 @@
 package queue;
 
-import java.util.Random;
+import org.graalvm.compiler.graph.Node;
 
 public class QueueLinkedList {
     private Node front, rear;
     private int size;
-
-    private class Node {
-        int data;
-        int id;
-        Node next;
-
-        public Node(int data) {
-            this.data = data;
-            this.next = null;
-            this.id = new Random().nextInt(1000);
-        }
-
-    }
 
     public int getNodeId(int data) {
         if (front.data == data)
@@ -57,6 +44,21 @@ public class QueueLinkedList {
             Node newNode = new Node(data);
             current.next = newNode;
         }
+    }
+
+    public void addAfter(Node node, int data) {
+        Node current = front;
+        Node temp = current;
+        while (temp.data != node.data) {
+                temp = current;
+               // temp.data = data;
+               current = current.next;
+            }
+
+        Node newNode= new Node(data); 
+        temp.next=newNode;
+        newNode.next=current;   
+
     }
 
     public void removeFirstNode() {
