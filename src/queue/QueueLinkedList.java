@@ -49,15 +49,14 @@ public class QueueLinkedList {
     public void addAfter(Node node, int data) {
         Node current = front;
         Node temp = current;
-        while (temp.data != node.data) {
-                temp = current;
-               // temp.data = data;
-               current = current.next;
-            }
+        while (current.next != null) {
+            temp = current;
+            current = current.next;
+        }
 
-        Node newNode= new Node(data); 
-        temp.next=newNode;
-        newNode.next=current;   
+        Node newNode = new Node(data);
+        temp.next = newNode;
+        newNode.next = current;
 
     }
 

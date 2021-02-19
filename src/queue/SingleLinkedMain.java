@@ -37,7 +37,7 @@ public class SingleLinkedMain {
         singleLinked2.print();
        
         System.out.println("-------Add After--------");
-        singleLinked2.addAfter(new Node(1), 3);;
+        singleLinked2.addAfter(new Node(1), 2);;
         singleLinked2.print();
     }
 }
