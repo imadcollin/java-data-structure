@@ -3,9 +3,9 @@ package queue;
 import java.util.Random;
 
 public class Node {
-    int data;
-    int id;
-    Node next;
+    public int data;
+    public int id;
+   public Node next;
 
     public Node(int data) {
         this.data = data;
