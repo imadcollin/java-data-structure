@@ -32,6 +32,33 @@ public class DoubleLinkedList {
 
     }
 
+    public void insertEnd(int data) {
+        DoubleNode newNode = new DoubleNode(data);
+        if (isEmpty()) {
+
+            head = tail = newNode;
+            size++;
+            return;
+        }
+
+        DoubleNode current = head;
+        while (current != null) {
+
+            current = (DoubleNode) current.next;
+        }
+        newNode.next = null;
+        newNode.prev = tail;
+        if (tail != null)
+            tail.next = newNode;
+        tail = newNode;
+
+        size++;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     public void print() {
         if (head == null) {
 
