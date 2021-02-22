@@ -17,33 +17,30 @@ public class DoubleLinkedList {
         DoubleNode newDoubleNode = new DoubleNode(data);
         if (head == null) {
 
-          head= newDoubleNode; 
-          head.next= newDoubleNode;
-          head.prev= null; 
+            head = tail = newDoubleNode;
+            head.prev = null;
+            tail.next = null;
         }
 
-        if (head != null) {
-            head.prev = newDoubleNode;
-            head = newDoubleNode;
-        }
-
-        if (tail == null) {
+        else {
+            tail.next = newDoubleNode;
+            newDoubleNode.prev = tail;
             tail = newDoubleNode;
+            tail.next = null;
         }
         size++;
 
     }
 
     public void print() {
-        if (head == null){
+        if (head == null) {
 
             System.out.println("Empty...");
             return;
-        }
-        else {
+        } else {
             DoubleNode current = head;
             while (current != null) {
-                System.out.println("id:" + head.id + " - data:" + head.data);
+                System.out.println("id:" + current.id + " - data:" + current.data);
                 current = (DoubleNode) current.next;
             }
         }
