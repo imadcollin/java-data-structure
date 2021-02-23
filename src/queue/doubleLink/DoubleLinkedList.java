@@ -75,7 +75,7 @@ public class DoubleLinkedList {
         newNode.next = temp.next;
         newNode.prev = temp;
         temp.next = newNode;
-
+        size++;
     }
 
     public void deleteEnd() {
@@ -86,6 +86,7 @@ public class DoubleLinkedList {
 
         tail = (DoubleNode) tail.prev;
         tail.next = null;
+        size--;
     }
 
     public boolean isEmpty() {
