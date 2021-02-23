@@ -67,7 +67,7 @@ public class DoubleLinkedList {
             current = (DoubleNode) current.next;
 
         }
-        if (temp ==null) {
+        if (temp == null) {
             System.out.println("The poisition was null, no idea where to insert...");
             return;
         }
@@ -76,6 +76,16 @@ public class DoubleLinkedList {
         newNode.prev = temp;
         temp.next = newNode;
 
+    }
+
+    public void deleteEnd() {
+        if (isEmpty()) {
+            System.out.println("Nothing to delete the list is empty..!");
+            return;
+        }
+
+        tail = (DoubleNode) tail.prev;
+        tail.next = null;
     }
 
     public boolean isEmpty() {

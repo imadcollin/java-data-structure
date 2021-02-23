@@ -21,6 +21,12 @@ public class DoubleLinkMain {
 
         doubleLinkedList.insertAfter(50, 7);
         doubleLinkedList.print();
+        
+        System.out.println("------- Delete End -------"); 
+        doubleLinkedList.deleteEnd();; 
+        doubleLinkedList.print();
+
+
 
     }
 }
