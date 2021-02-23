@@ -55,6 +55,29 @@ public class DoubleLinkedList {
         size++;
     }
 
+    public void insertAfter(int after, int data) {
+
+        DoubleNode current = head;
+        DoubleNode temp = null;
+        while (current != null) {
+            if (current.data == after) {
+                temp = current;
+                break;
+            }
+            current = (DoubleNode) current.next;
+
+        }
+        if (temp ==null) {
+            System.out.println("The poisition was null, no idea where to insert...");
+            return;
+        }
+        DoubleNode newNode = new DoubleNode(data);
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        temp.next = newNode;
+
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }

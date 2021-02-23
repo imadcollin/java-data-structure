@@ -11,7 +11,16 @@ public class DoubleLinkMain {
         
         System.out.println(doubleLinkedList.isEmpty()); 
         
+        System.out.println("------- Insert End -------"); 
         doubleLinkedList.insertEnd(4);
         doubleLinkedList.print();
+        System.out.println("------- Insert After -------"); 
+
+        doubleLinkedList.insertAfter(2, 7);
+        doubleLinkedList.print();
+
+        doubleLinkedList.insertAfter(50, 7);
+        doubleLinkedList.print();
+
     }
 }
