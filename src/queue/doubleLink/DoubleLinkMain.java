@@ -25,7 +25,10 @@ public class DoubleLinkMain {
         System.out.println("------- Delete End -------"); 
         doubleLinkedList.deleteEnd();; 
         doubleLinkedList.print();
-
+        
+        System.out.println("------- Delete First -------"); 
+        doubleLinkedList.deleteFirst();; 
+        doubleLinkedList.print();
 
 
     }

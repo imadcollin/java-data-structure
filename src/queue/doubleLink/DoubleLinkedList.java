@@ -89,6 +89,17 @@ public class DoubleLinkedList {
         size--;
     }
 
+    public void deleteFirst() {
+        if (isEmpty()) {
+            System.out.println("Nothing to delete the list is empty..!");
+            return;
+        }
+        DoubleNode temp = (DoubleNode) head.next;
+        head = temp;
+        size--;
+
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
