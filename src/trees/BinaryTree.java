@@ -25,4 +25,12 @@ public class BinaryTree {
         root = addToRoot(root, data);
     }
 
+    public void trasverse(Node node){
+        if(node !=null){
+            trasverse(node.left);
+            System.out.println("The data is :"+node.data);
+            trasverse(node.right);
+        } 
+    }
+
 }

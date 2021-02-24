@@ -8,6 +8,10 @@ public class Main {
         bt.buildTree(3);
         bt.buildTree(7);
         bt.buildTree(6);
-
+        Node node = new Node(4);
+        node.left = new Node(1);
+        node.right = new Node(10);
+     
+        bt.trasverse(node);
     }
 }
