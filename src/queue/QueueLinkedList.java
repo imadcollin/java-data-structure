@@ -1,7 +1,4 @@
 package queue;
-
-import org.graalvm.compiler.graph.Node;
-
 public class QueueLinkedList {
     private Node front, rear;
     private int size;
