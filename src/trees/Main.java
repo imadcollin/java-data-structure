@@ -18,5 +18,10 @@ public class Main {
         boolean check_2 = bt.contian(node, 7);
         boolean check_3 = bt.contian(node, 10);
         System.out.println(check_1 + "\t" + check_2 + "\t" + check_3);
+
+       System.out.println(bt.removeNOde(node, 4)); 
+
+        bt.trasverse(node);
+
     }
 }
