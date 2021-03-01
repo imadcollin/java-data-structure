@@ -16,13 +16,16 @@ public class NodeL {
     }
 }
 
-class BinaryTree {
+class BinaryTree2 {
     NodeL left, right;
     NodeL root;
+    Queue<NodeL> queue;
 
-    public BinaryTree() {
+    public BinaryTree2() {
 
         root = null;
+        queue = new LinkedList<>();
+
     }
 
     public void push(String name, int data) {
@@ -31,10 +34,8 @@ class BinaryTree {
         if (root == null) {
             root = newNode;
             return;
-        }
-        else {
+        } else {
 
-            Queue<NodeL> queue = new LinkedList<>();
             queue.add(root);
 
             while (true) {
@@ -56,6 +57,13 @@ class BinaryTree {
 
         }
 
+    }
+
+    public int size() {
+        return queue.size();
+    }
+    public void print(){
+        queue.forEach(s->System.out.println("Name: "+ s.name + " Data: "+s.data));
     }
 
 }
