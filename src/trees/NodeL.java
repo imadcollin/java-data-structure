@@ -62,8 +62,26 @@ class BinaryTree2 {
     public int size() {
         return queue.size();
     }
-    public void print(){
-        queue.forEach(s->System.out.println("Name: "+ s.name + " Data: "+s.data));
+
+    public void print() {
+        queue.forEach(s -> System.out.println("Name: " + s.name + " Data: " + s.data));
+    }
+
+    public void travesel(NodeL node) {
+        if (root == null) {
+            System.out.println("Empty...!");
+            return;
+        } else {
+            if (node.left != null) {
+
+                travesel(node.left);
+            }
+            System.out.println("Name: " + node.name + " Data:" + node.data);
+
+            if (node.right != null) {
+                travesel(node.right);
+            }
+        }
     }
 
 }

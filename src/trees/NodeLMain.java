@@ -10,5 +10,8 @@ public class NodeLMain {
 
         System.out.println(binaryTree.size());
         binaryTree.print();
+        System.out.println("--------------------");
+
+        binaryTree.travesel(binaryTree.root);
     }
 }
