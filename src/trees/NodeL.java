@@ -1,35 +1,60 @@
 package trees;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class NodeL {
     int data;
     String name;
-    NodeL next;
+    NodeL next, left, right;
 
     public NodeL(String name, int data) {
         this.name = name;
         this.data = data;
         next = null;
+        left = right = null;
     }
-
 }
 
 class BinaryTree {
-    BinaryTree left, right;
-    int data;
-    String name;
+    NodeL left, right;
+    NodeL root;
 
-    public BinaryTree(String name, int data) {
-        this.name = name;
-        this.data = data;
-        left = right = null;
+    public BinaryTree() {
+
+        root = null;
     }
 
-    public NodeL push(NodeL head, int data) {
+    public void push(String name, int data) {
 
         NodeL newNode = new NodeL(name, data);
+        if (root == null) {
+            root = newNode;
+            return;
+        }
+        else {
 
-        newNode.next = head;
-        head = newNode;
-        return head;
+            Queue<NodeL> queue = new LinkedList<>();
+            queue.add(root);
+
+            while (true) {
+                NodeL node = queue.remove();
+                if (node.left != null && node.right != null) {
+                    queue.add(node.left);
+                    queue.add(node.right);
+                } else {
+                    if (node.left == null) {
+                        node.left = newNode;
+                        queue.add(node.left);
+                    } else {
+                        node.right = newNode;
+                        queue.add(node.right);
+                    }
+                    break;
+                }
+            }
+
+        }
 
     }
 
