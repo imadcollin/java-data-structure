@@ -2,10 +2,10 @@ package trees;
 
 public class PostOrderTra {
 
-    public void postTraverse(Node node) {
+    public void postOrder(Node node) {
         if (node != null) {
-            postTraverse(node.left);
-            postTraverse(node.right);
+            postOrder(node.left);
+            postOrder(node.right);
             System.out.print(" " + node.data);
         }
 
@@ -34,7 +34,7 @@ class PrintOut {
         n2.left = n5;
         n2.right = n6;
 
-        postOrderTra.postTraverse(root);
+        postOrderTra.postOrder(root);
 
     }
 }
