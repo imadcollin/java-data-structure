@@ -1,7 +1,4 @@
 package trees;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class PostOrderTra {
@@ -21,7 +18,7 @@ public class PostOrderTra {
         s2 = new Stack<>();
         if (root == null)
             return;
-            
+
         s1.push(root);
         while (!s1.empty()) {
             Node node = s1.pop();
