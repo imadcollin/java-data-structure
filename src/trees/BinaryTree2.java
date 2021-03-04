@@ -54,21 +54,5 @@ class BinaryTree2 {
         queue.forEach(s -> System.out.println("Data: " + s.data));
     }
 
-    public void travesel(Node node) {
-        if (root == null) {
-            System.out.println("Empty...!");
-            return;
-        } else {
-            if (node.left != null) {
-
-                travesel(node.left);
-            }
-            System.out.println("Data:" + node.data);
-
-            if (node.right != null) {
-                travesel(node.right);
-            }
-        }
-    }
 
 }

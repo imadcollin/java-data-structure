@@ -15,6 +15,7 @@ public class BinaryTree2Main {
         binaryTree.print();
         
         System.out.println("-------Traversal--------");
-        binaryTree.travesel(binaryTree.root);
+        
+        InOrderTra.travesel(binaryTree.root);
     }
 }
