@@ -12,16 +12,16 @@ public class Main {
         node.left = new Node(1);
         node.right = new Node(10);
 
-        bt.trasverse(node);
+        InOrderTra.travesel(bt.root);
 
         boolean check_1 = bt.contian(node, 4);
         boolean check_2 = bt.contian(node, 7);
         boolean check_3 = bt.contian(node, 10);
         System.out.println(check_1 + "\t" + check_2 + "\t" + check_3);
 
-       System.out.println(bt.removeNOde(node, 4)); 
+       System.out.println(bt.removeNOde(bt.root, 1).data); 
 
-        bt.trasverse(node);
+        InOrderTra.travesel(bt.root);
 
     }
 }

@@ -11,7 +11,7 @@ public class InOrderTra {
 
                 travesel(node.left);
             }
-            System.out.println("Data:" + node.data);
+            System.out.println(" " +node.data);
 
             if (node.right != null) {
                 travesel(node.right);
