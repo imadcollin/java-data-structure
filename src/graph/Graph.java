@@ -28,4 +28,17 @@ public class Graph {
             adjsVerts.get(Des).add(source);
         }
     }
+
+    public void countEdges() {
+        System.out.println(adjsVerts.keySet().size());
+    }
+
+    public void containsVertex(Vertex v) {
+        if (adjsVerts.containsKey(v)) {
+
+            System.out.println("Vertex is Not exsits... ");
+        } else
+            System.out.println("Vertex is exsits... ");
+
+    }
 }
