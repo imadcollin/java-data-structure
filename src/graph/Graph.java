@@ -53,4 +53,20 @@ public class Graph {
             System.out.println("Vertex is exsits... ");
 
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Vertex vertex : adjsVerts.keySet()) {
+            stringBuilder.append(vertex.label.toString() + ": ");
+
+            for (Vertex vertex2 : adjsVerts.get(vertex)) {
+                stringBuilder.append(vertex.label.toString());
+            }
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+
+    }
 }
