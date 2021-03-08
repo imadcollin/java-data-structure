@@ -29,8 +29,20 @@ public class Graph {
         }
     }
 
-    public void countEdges() {
+    public void countVertex() {
         System.out.println(adjsVerts.keySet().size());
+    }
+
+    public void countEdges(boolean bi) {
+
+        int count = 0;
+        for (Vertex vertex : adjsVerts.keySet()) {
+            count += adjsVerts.get(vertex).size();
+        }
+        if (bi == true) {
+            count = count / 2;
+        }
+        System.out.println("Edges: " + count);
     }
 
     public void containsVertex(Vertex v) {
