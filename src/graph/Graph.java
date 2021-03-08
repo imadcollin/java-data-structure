@@ -46,7 +46,7 @@ public class Graph {
     }
 
     public void containsVertex(Vertex v) {
-        if (adjsVerts.containsKey(v)) {
+        if (! adjsVerts.containsKey(v)) {
 
             System.out.println("Vertex is Not exsits... ");
         } else
