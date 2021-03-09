@@ -30,7 +30,7 @@ public class Graph {
     }
 
     public void countVertex() {
-        System.out.println(adjsVerts.keySet().size());
+        System.out.println("VERTS: "+adjsVerts.keySet().size());
     }
 
     public void countEdges(boolean bi) {
@@ -48,9 +48,9 @@ public class Graph {
     public void containsVertex(Vertex v) {
         if (! adjsVerts.containsKey(v)) {
 
-            System.out.println("Vertex is Not exsits... ");
+            System.out.println(v.label+" vertex is Not exsits... ");
         } else
-            System.out.println("Vertex is exsits... ");
+            System.out.println(v.label+ " vertex is exsits... ");
 
     }
 
@@ -62,11 +62,11 @@ public class Graph {
             stringBuilder.append(vertex.label.toString() + ": ");
 
             for (Vertex vertex2 : adjsVerts.get(vertex)) {
-                stringBuilder.append(vertex.label.toString());
+                stringBuilder.append(vertex2.label.toString()+" ");
             }
             stringBuilder.append("\n");
         }
-        return stringBuilder.toString();
+        return (stringBuilder.toString());
 
     }
 }
