@@ -3,8 +3,8 @@ package graph;
 public class Vertex {
     String label;
 
-    public Vertex(String labal) {
-        this.label = labal;
+    public Vertex(String label) {
+        this.label = label;
     }
 
     @Override
@@ -33,6 +33,11 @@ public class Vertex {
         } else if (!label.equals(other.label))
             return false;
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return label;
     }
 
 }
