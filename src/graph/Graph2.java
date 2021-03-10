@@ -34,14 +34,28 @@ public class Graph2 {
         System.out.println(adjsVerts.keySet().size());
     }
 
-    public void containsVertex(String label){
+    public void containsVertex(String label) {
         List<Vertex> find = adjsVerts.keySet().stream().filter(x -> x.label == label).collect(Collectors.toList());
-        if( find.size()>0){
+        if (find.size() > 0) {
 
-            System.out.println(label+ " is exist") ;
-        } 
-        else 
-        System.out.println(label+ " not exist") ;
+            System.out.println(label + " is exist");
+        } else
+            System.out.println(label + " not exist");
+
+    }
+
+    public void printGraph() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Vertex vertex : adjsVerts.keySet()) {
+            stringBuilder.append(vertex.label.toString() + ": ");
+
+            for (Vertex vertex2 : adjsVerts.get(vertex)) {
+                stringBuilder.append(vertex2.label.toString() + " ");
+            }
+            stringBuilder.append("\n");
+        }
+        System.out.println(stringBuilder.toString());
 
     }
 
@@ -51,16 +65,10 @@ class MainGraph2 {
     public static void main(String[] args) {
         Graph2 graph2 = new Graph2();
 
-        graph2.addVertex("first");
-        graph2.addVertex("second");
         graph2.addVertex("1");
         graph2.addVertex("2");
         graph2.addVertex("3");
         graph2.addVertex("4");
-        
-
-        graph2.containsVertex("first");
-        graph2.containsVertex("four");
 
         graph2.addEdge("1", "2");
         graph2.addEdge("1", "3");
@@ -69,5 +77,6 @@ class MainGraph2 {
         graph2.addEdge("2", "4");
 
         graph2.countVertex();
+        graph2.printGraph();
     }
 }
