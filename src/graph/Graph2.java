@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Graph2 {
     private Map<Vertex, List<Vertex>> adjsVerts;
@@ -33,6 +34,17 @@ public class Graph2 {
         System.out.println(adjsVerts.keySet().size());
     }
 
+    public void containsVertex(String label){
+        List<Vertex> find = adjsVerts.keySet().stream().filter(x -> x.label == label).collect(Collectors.toList());
+        if( find.size()>0){
+
+            System.out.println(label+ " is exist") ;
+        } 
+        else 
+        System.out.println(label+ " not exist") ;
+
+    }
+
 }
 
 class MainGraph2 {
@@ -43,6 +55,7 @@ class MainGraph2 {
         graph2.addVertex("second");
 
         graph2.containsVertex("first");
+        graph2.containsVertex("four");
 
     }
 }
