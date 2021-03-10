@@ -25,8 +25,8 @@ public class Vertex {
         if (getClass() != obj.getClass())
             return false;
         Vertex other = (Vertex) obj;
-        if (!Graph2.class.equals(other.getClass()))
-            return false;
+        // if (!Graph2.class.equals(other.getClass()))
+        // return false;
         if (label == null) {
             if (other.label != null)
                 return false;
