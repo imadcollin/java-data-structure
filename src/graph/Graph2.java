@@ -53,9 +53,21 @@ class MainGraph2 {
 
         graph2.addVertex("first");
         graph2.addVertex("second");
+        graph2.addVertex("1");
+        graph2.addVertex("2");
+        graph2.addVertex("3");
+        graph2.addVertex("4");
+        
 
         graph2.containsVertex("first");
         graph2.containsVertex("four");
 
+        graph2.addEdge("1", "2");
+        graph2.addEdge("1", "3");
+        graph2.addEdge("1", "4");
+        graph2.addEdge("2", "3");
+        graph2.addEdge("2", "4");
+
+        graph2.countVertex();
     }
 }
