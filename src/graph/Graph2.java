@@ -20,7 +20,6 @@ public class Graph2 {
 
     public void removeVertex(String label) {
         List<Vertex> find = adjsVerts.keySet().stream().filter(x -> x.label == label).collect(Collectors.toList());
-        Vertex v = new Vertex(label);
         adjsVerts.values().stream().forEach(e -> e.remove(find.get(0)));
         adjsVerts.remove(new Vertex(label));
     }
@@ -65,6 +64,21 @@ public class Graph2 {
 
 class MainGraph2 {
     public static void main(String[] args) {
+
+        System.out.println("--------Create------");
+        getGraph2().printGraph();
+
+        getGraph2().countVertex();
+        getGraph2().removeVertex("1");
+
+        System.out.println("--------Remove------");
+        getGraph2().printGraph(); // Without vertex "1"
+
+        System.out.println("--------Contains------");
+        getGraph2().containsVertex("1");
+    }
+
+    public static Graph2 getGraph2() {
         Graph2 graph2 = new Graph2();
 
         graph2.addVertex("1");
@@ -78,14 +92,6 @@ class MainGraph2 {
         graph2.addEdge("2", "3");
         graph2.addEdge("2", "4");
 
-        graph2.countVertex();
-        graph2.printGraph();
-
-        graph2.countVertex();
-        graph2.removeVertex("1");
-        graph2.countVertex();
-        graph2.printGraph(); // Without vertex "1"
-
-        graph2.containsVertex("1");
+        return graph2;
     }
 }
