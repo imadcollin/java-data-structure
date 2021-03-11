@@ -19,8 +19,10 @@ public class Graph2 {
     }
 
     public void removeVertex(String label) {
-        Vertex vertex = new Vertex(label);
-        adjsVerts.values().stream().forEach(x -> x.remove(vertex));
+        List<Vertex> find = adjsVerts.keySet().stream().filter(x -> x.label == label).collect(Collectors.toList());
+        Vertex v = new Vertex(label);
+        adjsVerts.values().stream().forEach(e -> e.remove(find.get(0)));
+        adjsVerts.remove(new Vertex(label));
     }
 
     public void addEdge(String label1, String label2) {
@@ -78,5 +80,12 @@ class MainGraph2 {
 
         graph2.countVertex();
         graph2.printGraph();
+
+        graph2.countVertex();
+        graph2.removeVertex("1");
+        graph2.countVertex();
+        graph2.printGraph(); // Without vertex "1"
+
+        graph2.containsVertex("1");
     }
 }
