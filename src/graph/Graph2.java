@@ -45,6 +45,19 @@ public class Graph2 {
 
     }
 
+    public void removeEdge(String l1, String l2) {
+        Vertex v1 = new Vertex(l1);
+        Vertex v2 = new Vertex(l2);
+
+        if (adjsVerts.get(v1).size() != 0) {
+            adjsVerts.remove(v1);
+        }
+        if (adjsVerts.get(v2).size() != 0) {
+            adjsVerts.remove(v2);
+        }
+
+    }
+
     public void printGraph() {
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -76,6 +89,7 @@ class MainGraph2 {
 
         System.out.println("--------Contains------");
         getGraph2().containsVertex("1");
+
     }
 
     public static Graph2 getGraph2() {
