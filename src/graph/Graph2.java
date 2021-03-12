@@ -2,8 +2,13 @@ package graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
 import java.util.stream.Collectors;
 
 public class Graph2 {
@@ -59,8 +64,8 @@ public class Graph2 {
 
     }
 
-    public List<Vertex> gVertexs(String l){
-        return adjsVerts.get(new Vertex(l)); 
+    public List<Vertex> gVertexs(String l) {
+        return adjsVerts.get(new Vertex(l));
     }
 
     public void printGraph() {
@@ -76,6 +81,24 @@ public class Graph2 {
         }
         System.out.println(stringBuilder.toString());
 
+    }
+
+    public void traversel(Graph2 graph2, String root) {
+        Stack<String> stack = new Stack<>();
+        Set<String> visited = new LinkedHashSet<String>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            String temp = stack.pop();
+            if (!visited.contains(temp)) {
+                visited.add(temp);
+
+                for (Vertex v : graph2.gVertexs(temp)) {
+                    stack.push(v.label);
+
+                }
+            }
+        }
+        visited.stream().forEach(x -> System.out.print(x + " "));
     }
 
 }
@@ -100,8 +123,11 @@ class MainGraph2 {
         getGraph2().printGraph();
 
         System.out.println("--------Vertex 1 ------");
-        getGraph2().gVertexs("1").stream().forEach(x->System.out.print(x+ " "));; 
-        
+        getGraph2().gVertexs("1").stream().forEach(x -> System.out.print(x + " "));
+
+        System.out.println();
+        System.out.println("--------Traversal ------");
+        getGraph2().traversel(getGraph2(), "1");
 
     }
 
