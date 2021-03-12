@@ -54,8 +54,13 @@ public class Graph2 {
         }
         if (adjsVerts.get(v2).size() != 0) {
             adjsVerts.remove(v2);
+
         }
 
+    }
+
+    public List<Vertex> gVertexs(String l){
+        return adjsVerts.get(new Vertex(l)); 
     }
 
     public void printGraph() {
@@ -89,6 +94,14 @@ class MainGraph2 {
 
         System.out.println("--------Contains------");
         getGraph2().containsVertex("1");
+
+        getGraph2().removeEdge("1", "2");
+        System.out.println("--------Remove Edge------");
+        getGraph2().printGraph();
+
+        System.out.println("--------Vertex 1 ------");
+        getGraph2().gVertexs("1").stream().forEach(x->System.out.print(x+ " "));; 
+        
 
     }
 
