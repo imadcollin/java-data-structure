@@ -99,6 +99,24 @@ public class Graph2 {
         visited.stream().forEach(x -> System.out.print(x + " "));
     }
 
+    public void breadthTraversal(Graph2 graph2, String l) {
+        Stack<String> stack = new Stack<>();
+        Set<String> visited = new LinkedHashSet<String>();
+        visited.add(l);
+        stack.push(l);
+        while (!stack.isEmpty()) {
+            String vertex = stack.pop();
+            for (Vertex v : graph2.gVertexs(vertex)) {
+                if (!visited.contains(v.label)) {
+                    visited.add(v.label);
+                    stack.add(v.label);
+                }
+            }
+        }
+        visited.stream().forEach(x -> System.out.print(x + " "));
+
+    }
+
 }
 
 class MainGraph2 {
@@ -126,6 +144,10 @@ class MainGraph2 {
         System.out.println();
         System.out.println("--------Traversal ------");
         getGraph2().traversel(getGraph2(), "1");
+
+        System.out.println();
+        System.out.println("--------Traversal Breadth First------");
+        getGraph2().breadthTraversal(getGraph2(), "1");
 
     }
 
