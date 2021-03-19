@@ -13,6 +13,25 @@ public class HeapSort {
         print(arr);
     }
 
+    public static void heapfy(int arr[], int i) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (arr[left] > arr[largest])
+            largest = left;
+        if (arr[left] < arr[largest])
+            largest = right;
+
+        if (largest != i) {
+            int temp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = temp;
+        }
+        heapfy(arr, i);
+
+    }
+
     public static void print(int arr[]) {
         for (int i : arr) {
             System.out.print(i + " ");
