@@ -10,13 +10,15 @@ public class PriorityQueue {
     }
 
     public void heapify(ArrayList<Integer> arr, int i) {
+        int size = arrayList.size();
+
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if (left < arr.size() && arr.get(left) > arr.get(largest))
+        if (left < size && arr.get(left) > arr.get(largest))
             largest = left;
-        if (right < arr.size() && arr.get(right) > arr.get(largest))
+        if (right < size && arr.get(right) > arr.get(largest))
             largest = right;
 
         if (largest != i) {
@@ -28,11 +30,12 @@ public class PriorityQueue {
     }
 
     public void insertNode(int data) {
-        if (arrayList.size() == 0) {
+        int size = arrayList.size();
+        if (size == 0) {
             arrayList.add(data);
         } else {
             arrayList.add(data);
-            for (int i = arrayList.size() / 2 - 1; i >= 0; i--) {
+            for (int i = size / 2 - 1; i >= 0; i--) {
                 heapify(arrayList, i);
             }
         }
@@ -40,25 +43,24 @@ public class PriorityQueue {
 
     public void deleteNode(int data) {
         int i;
-        for (i = 0; i < arrayList.size(); i++) {
+        int size = arrayList.size();
+        for (i = 0; i < size; i++) {
             if (data == arrayList.get(i))
                 break;
         }
 
         int temp = arrayList.get(i);
-        arrayList.set(i, arrayList.get(arrayList.size() - 1));
-        arrayList.set(arrayList.size() - 1, temp);
+        arrayList.set(i, arrayList.get(size - 1));
+        arrayList.set(size - 1, temp);
 
-        arrayList.remove(arrayList.size() - 1);
-        for (int j = arrayList.size() / 2 - 1; j >= 0; j--) {
+        arrayList.remove(size - 1);
+        for (int j = size / 2 - 1; j >= 0; j--) {
             heapify(arrayList, j);
         }
     }
 
     public void print() {
-        for (int el : arrayList) {
-            System.out.print(el + " ");
-        }
+        arrayList.stream().forEach(x -> System.out.print(x + " "));
     }
 
     public static void main(String[] args) {
