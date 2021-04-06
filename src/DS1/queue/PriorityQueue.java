@@ -39,7 +39,20 @@ public class PriorityQueue {
     }
 
     public void deleteNode(int data) {
+        int i;
+        for (i = 0; i < arrayList.size(); i++) {
+            if (data == arrayList.get(i))
+                break;
+        }
 
+        int temp = arrayList.get(i);
+        arrayList.set(i, arrayList.get(arrayList.size() - 1));
+        arrayList.set(arrayList.size() - 1, temp);
+
+        arrayList.remove(arrayList.size() - 1);
+        for (int j = arrayList.size() / 2 - 1; j >= 0; j--) {
+            heapify(arrayList, j);
+        }
     }
 
     public void print() {
@@ -57,5 +70,11 @@ public class PriorityQueue {
         priorityQueue.insertNode(2);
 
         priorityQueue.print();
+        System.out.println();
+
+        priorityQueue.deleteNode(9);
+        priorityQueue.print();
+
     }
+
 }
