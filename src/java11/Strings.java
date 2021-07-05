@@ -1,4 +1,4 @@
-package java11.strings;
+package java11;
 import java.util.List;
 import java.util.stream.Collectors;
 public class Strings {
