@@ -11,6 +11,6 @@ public class FeatureTest {
     }
     @Test
     public void failed_test(){
-        Assert.assertFalse(true);
+        Assert.fail();
     }
 }
