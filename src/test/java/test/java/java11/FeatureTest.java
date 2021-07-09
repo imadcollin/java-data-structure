@@ -4,7 +4,6 @@ import java11.Features;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,18 +13,13 @@ public class FeatureTest {
 
     @Before
     public void init() throws Exception {
-         features = new Features();
+        features = new Features();
     }
 
     @Test
     public void passed_test() {
 
         Assert.assertTrue(true);
-    }
-
-    @Test
-    public void failed_test() {
-        Assert.fail();
     }
 
     @Test
@@ -47,6 +41,24 @@ public class FeatureTest {
         Assert.assertNotSame(list, listOFStringWithoutBlanks);
         Assert.assertFalse(listOFStringWithoutBlanks.contains("\n"));
         Assert.assertFalse(listOFStringWithoutBlanks.contains(null));
+    }
+
+    @Test
+    public void locateVariableTest() {
+        List<String> UppercaseList = features.localVariable(Arrays.asList("java", "python"));
+        Assert.assertEquals(UppercaseList.get(0), "JAVA");
+        Assert.assertEquals(UppercaseList.get(1), "PYTHON");
+        Assert.assertFalse(UppercaseList.contains("\n"));
+        Assert.assertFalse(UppercaseList.contains(" "));
+        Assert.assertEquals(UppercaseList.size(), 2);
+    }
+
+    @Test
+    public void ListToArrayOFStrings() {
+        String[] strArr = features.CollectionToArray(Arrays.asList("java", "python"));
+        Assert.assertEquals(strArr[0], "java");
+        Assert.assertEquals(strArr[1], "python");
+        Assert.assertEquals(strArr.length, 2);
     }
 
 }
