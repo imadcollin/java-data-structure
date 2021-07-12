@@ -17,12 +17,6 @@ public class FeatureTest {
     }
 
     @Test
-    public void passed_test() {
-
-        Assert.assertTrue(true);
-    }
-
-    @Test
     public void strings() {
         String str = " str1 \n \n str2 \n str3.";
         List<String> lines = features.stringsWithoutBlanks(str);
