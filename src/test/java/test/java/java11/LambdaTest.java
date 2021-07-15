@@ -35,4 +35,16 @@ public class LambdaTest {
 
 
     }
+
+    @Test
+    public void alpha_test() {
+        List<String> list = lambdaFn.CallStatic(Arrays.asList("java", "Python", "C"));
+        Assert.assertTrue(list.size() > 0);
+        Assert.assertEquals(list.get(0), "JAVA");
+        Assert.assertEquals(list
+                .get(1), "PYTHON");
+        Assert.assertEquals(list.get(2), "C");
+
+
+    }
 }

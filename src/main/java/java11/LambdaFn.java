@@ -32,10 +32,10 @@ public class LambdaFn implements MathOp {
     }
 
     public List<String> CallStatic(List<String> list) {
+
         list.forEach(new Consumer<>() {
             @Override
-            public void accept(String s) {
-                Alpha.Caps(s);
+            public void accept(String s) {Alpha.Caps(s);
             }
         });
         return list;
